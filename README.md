@@ -6,6 +6,19 @@ The `run_matrix_decomposition()` function reads participant-level measurements f
 
 This README describes the function implementation, including its use of absolute correlations and its handling of negative eigenvalues.
 
+## Requirements
+
+- R
+- The `data.table` package
+
+Install the dependency from an R session:
+
+```r
+install.packages("data.table")
+```
+
+All other functions used by the script are included with R. RStudio is optional.
+
 ## Input format
 
 Provide a comma-separated CSV file with a header row and one participant per row:
@@ -154,13 +167,7 @@ The Nyholt thresholds use `nyholt_adjusted`. If all original eigenvalues equal 1
 The implementation applies the Equation 5 expression attributed to [Li and Ji (2005)](https://doi.org/10.1038/sj.hdy.6800717) to the adjusted eigenvalues:
 
 $$
-M_{\mathrm{eff,LiJi}}
-= \sum_{i=1}^{M}
-\left[
-\mathbf{1}(\lambda_i^{+} \geq 1)
-+ \lambda_i^{+}
-- \left\lfloor \lambda_i^{+} \right\rfloor
-\right].
+M_{\mathrm{eff,LiJi}} = \sum_{i=1}^{M} \left[\mathbf{1}(\lambda_i^{+} \geq 1) + \lambda_i^{+} - \left\lfloor \lambda_i^{+} \right\rfloor\right].
 $$
 
 Here, $\mathbf{1}(\lambda_i^{+} \geq 1)$ equals 1 when the adjusted eigenvalue is at least 1 and 0 otherwise. Effective counts can be non-integer values.
@@ -193,3 +200,5 @@ If using these methods in research, cite the original methodological papers:
 
 1. Nyholt, D. R. (2004). [A simple correction for multiple testing for single-nucleotide polymorphisms in linkage disequilibrium with each other](https://doi.org/10.1086/383251). *The American Journal of Human Genetics*, **74**(4), 765–769.
 2. Li, J., & Ji, L. (2005). [Adjusting multiple testing in multilocus analyses using the eigenvalues of a correlation matrix](https://doi.org/10.1038/sj.hdy.6800717). *Heredity*, **95**, 221–227.
+
+The supplied source credits Dale Nyholt's [matSpDlite implementation](http://gump.qimr.edu.au/general/daleN/matSpDlite/).
