@@ -193,5 +193,3 @@ If using these methods in research, cite the original methodological papers:
 
 1. Nyholt, D. R. (2004). [A simple correction for multiple testing for single-nucleotide polymorphisms in linkage disequilibrium with each other](https://doi.org/10.1086/383251). *The American Journal of Human Genetics*, **74**(4), 765–769.
 2. Li, J., & Ji, L. (2005). [Adjusting multiple testing in multilocus analyses using the eigenvalues of a correlation matrix](https://doi.org/10.1038/sj.hdy.6800717). *Heredity*, **95**, 221–227.
-
-The supplied source credits Dale Nyholt's [matSpDlite implementation](http://gump.qimr.edu.au/general/daleN/matSpDlite/).
