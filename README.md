@@ -6,19 +6,6 @@ The `run_matrix_decomposition()` function reads participant-level measurements f
 
 This README describes the function implementation, including its use of absolute correlations and its handling of negative eigenvalues.
 
-## Requirements
-
-- R
-- The `data.table` package
-
-Install the dependency from an R session:
-
-```r
-install.packages("data.table")
-```
-
-All other functions used by the script are included with R. RStudio is optional.
-
 ## Input format
 
 Provide a comma-separated CSV file with a header row and one participant per row:
